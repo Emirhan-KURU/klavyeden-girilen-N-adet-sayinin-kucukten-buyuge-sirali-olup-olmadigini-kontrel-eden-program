@@ -1,0 +1,30 @@
+#include <stdio.h> 
+
+int IsSorted(double x[], int N);
+
+int main(){
+    double Array[100];
+    int N,i;
+
+    printf("Eleman sayisini giriniz:\t");
+    scanf("%d",&N);
+    
+    for(i=0;i<N;i++){
+        printf("%d. sayiyi giriniz:\t",i+1);
+        scanf("%lf",&Array[i]);}
+    
+    int D = IsSorted(Array,N);
+
+    if(D == 1) 
+        printf("Girilen sayilar kucukten buyuge dogru siralidir.");
+    else  
+        printf("Girilen sayilar kucukten buyuge sirali degil.");
+    printf("\n--------------------------");
+    return 0;}
+
+int IsSorted(double Array[], int N){
+    if(Array[N-1]>Array[N-2])   
+        return Array[N-2]>Array[N-3]; 
+    else  
+        return 0; 
+    }                      
